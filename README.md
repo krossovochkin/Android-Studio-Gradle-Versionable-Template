@@ -1,14 +1,16 @@
 Android-Studio-Gradle-Versionable-Template
 ==========================================
 
-##Why?##
+Why?
+----
 
 If in your Android Studio project there are many modules, then you may have troubles
 if new Build Tools, Android API or Gradle plugin released.
 You have to change these versions in all build.gradle files.
 If you have more than two modules this is annoying.
 
-##How to use##
+How to use
+-----------
 
 So, in this repo you will find Android Studio Templates for NewProject and for NewModule.
 Everything, you need to do is copy these folders to:
@@ -32,7 +34,8 @@ VERSION_CODE=1
 ```
 You can change these values in one place and they will be applied to all build.gradle files.
 
-##What can I do?##
+What can I do?
+-------------
 
 This version provides one-time change for:
 - build tools version
@@ -45,13 +48,13 @@ This version provides one-time change for:
 
 Values in gradle.properties file by default are values choosen in Android Studio when create new project.
 
-##I have existing project already##
+I have existing project already
+---------------------------------
 
 If you already have existing project, I strongly recommend you to do such a structure, it's useful.
 Just change these values in build.gradle files like:
 ```
-...
-	  compileSdkVersion Integer.parseInt(project.COMPILE_SDK_VERSION)
+    compileSdkVersion Integer.parseInt(project.COMPILE_SDK_VERSION)
     buildToolsVersion project.BUILD_TOOLS_VERSION
 
     defaultConfig {
@@ -60,15 +63,12 @@ Just change these values in build.gradle files like:
         versionCode Integer.parseInt(project.VERSION_CODE)
         versionName project.VERSION_NAME
     }
-...
 ```
 and don't forget about 
 ```
-...
-	  dependencies {
+    dependencies {
         classpath project.GRADLE_PLUGIN_VERSION
     }
-...	
 ```
 
 Happy coding!
